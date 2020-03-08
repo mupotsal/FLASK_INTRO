@@ -1,0 +1,1 @@
+alert("You are been hacked! Click ok to exit");

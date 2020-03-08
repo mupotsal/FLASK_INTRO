@@ -1,0 +1,46 @@
+{%extends "layout.html"%}
+
+{% block body %}
+<!-- <script src="{{url_for('static',filename='js_files/myscripts.js')}}"></script> -->
+<h1>Update Page</h1>
+<div>
+    <table class="table table-dark">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Comment</th>
+            <th scope="col">Date</th>
+            <th scope="col">Save/Cancel</th>
+          </tr>
+        </thead>
+        
+        <tbody>
+            
+            {% for post_comment in comment_to_edit %}
+            <form action="/edit/{{post_comment.comment_id}}" method="POST">
+          <tr>
+            <th scope="row">{{post_comment.comment_id}}</th>
+            {% if eddit %}
+            <td>
+                <input type="text" name="newComment" id="newComment" value="{{post_comment.user_comment}}">
+            </td>
+            {% else %}
+            <td>{{post_comment.user_comment}}</td>
+            {% endif %}
+            <td>{{post_comment.date_created}}</td>
+            <td>
+                
+                <input type="submit" value="Save">
+                <span style="color: blue"><a href="/"><input type="submit" value="Cancel"></a></span>
+            </td>
+          </tr>
+        </form>
+          {% endfor %}
+        </tbody>
+        
+        
+
+      </table>
+      
+</div>
+{% endblock %}

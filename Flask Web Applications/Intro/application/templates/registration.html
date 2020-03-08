@@ -1,0 +1,22 @@
+{%extends "layout.html"%}
+{% block body %}
+<h1>This is the registration page</h1>
+<form action="/registration" method="POST">
+    <div>
+        <p>Username</p>
+        <input type="text" name="user_name" placeholder="Type in your username" >
+    </div>
+    <div>
+        <p>Password</p>
+        <input type="password" name="password" placeholder="Type in your Password">
+    </div>
+    <div>
+        <p>Email</p>
+        <input type="email" name="email" placeholder="Type in your email">
+    </div>
+    <div>
+        <p>Login</p>
+        <input type="submit" value="Register">
+    </div>
+</form>
+{% endblock %}
